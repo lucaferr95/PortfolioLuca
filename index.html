@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberPortfolio</title>
+    <!-- link to fontawesome for inserting social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link to css file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#home" class="logo">LucaLab</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Luca Ferrara</h1>
+        <h1>Full-Stack Developer</h1>
+        <p>
+          Building digital experiences that merge creativity with technology
+        </p>
+        <p class="highlight">Specializing in modern web development</p>
+        <a href="#contacts" class="cta-button">Let's Connect</a>
+      </div>
+      <div class="hero-image">
+        <img src="files/avatar Luca.jpg" alt="Profile" class="profile-img" />
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <h2>Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Frontend Development</h3>
+          <p>
+            HTML5, CSS3, JavaScript, React, Redux, Typescript, Sass, Bootstrap,
+            DOM, Hooks
+          </p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-server"></i>
+          <h3>Backend Development</h3>
+          <p>Java, OOP, Spring Framework, JPA, JUnit, SQL, PostgreSQL</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Certificates</h3>
+          <p>
+            Graduation certificate for Full-Stack Developer course (Epicode),<br />
+            Regional qualification as IT Operator (Iscom Emilia-Romagna),<br />
+            Basic computer skills certification in Excel and Word (Forpin
+            Emilia-Romagna)
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="contacts" id="contacts">
+      <p>© 2025 LucaLab. All rights reserved.</p>
+      <div class="social-links">
+        <h3 class="footer-title">My links</h3>
+        <div class="icon-group">
+          <a
+            href="https://github.com/lucaferr95?tab=repositories"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://vercel.com/lucas-projects-67f0b7f5"
+            target="_blank"
+            class="vercel-icon"
+            aria-label="Vercel"
+          >
+            <svg
+              class="vercel-svg"
+              width="38"
+              height="44"
+              viewBox="0 06 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle class="vercel-bg" cx="50" cy="50" r="50" />
+              <polygon class="vercel-triangle" points="50,25 75,75 25,75" />
+            </svg>
+          </a>
+          <a href="https://wa.me/qr/FLEN4XUEFDBOO1"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!-- link to javascript file -->
+    <script src="script.js"></script>
+  </body>
+</html>

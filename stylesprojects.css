@@ -1,0 +1,93 @@
+#projects {
+  background-color: #0f0f0f;
+  padding: 60px 5vw; /* usa percentuale per adattarsi allo schermo */
+  color: #d4f7dc;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+  max-width: 1200px; /* più ampio ma ancora leggibile */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  color: #a0f0c0;
+  margin-bottom: 40px;
+}
+
+.project {
+  background-color: #1a1a1a;
+  border-left: 4px solid #00ff88;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+.project:hover {
+  background-color: #222;
+}
+
+.project h3 {
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #d4f7dc;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.project button {
+  background-color: #00ff88;
+  color: #0f0f0f;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.project button:hover {
+  background-color: #00cc70;
+  transform: scale(1.05);
+}
+.section-title {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.title-group {
+  max-width: 80%;
+}
+
+.home-btn {
+  text-decoration: none;
+  background-color: #05a158;
+  color: #000000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #444;
+}
