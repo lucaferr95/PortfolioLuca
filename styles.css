@@ -259,3 +259,45 @@ footer {
     padding-left: 2rem;
   }
 }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 5%;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
