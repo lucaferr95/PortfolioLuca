@@ -102,7 +102,8 @@ body {
     transform: translateY(-20px);
   }
 }
-.hero h1 {
+.hero h1,
+h2 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
   background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
