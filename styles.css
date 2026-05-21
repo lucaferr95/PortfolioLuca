@@ -342,7 +342,11 @@ footer {
   }
 }
 
-/* Elementi Menu Mobile */
+/* ==========================================================================
+   RESPONSIVE DESIGN & MOBILE MENU
+   ========================================================================== */
+
+/* Il bottone hamburger: visibile solo sotto i 768px */
 .hamburger {
   display: none;
   background: none;
@@ -350,42 +354,88 @@ footer {
   font-size: 1.8rem;
   color: var(--text);
   cursor: pointer;
+  z-index: 1010;
 }
 
+/* Il menu mobile: ora strutturato per coprire bene la larghezza sotto la navbar */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 5%;
-  background: rgba(10, 10, 10, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
+  position: fixed; /* Cambiato in fixed per evitare che si muova durante lo scroll */
+  top: 75px; /* Si allinea perfettamente sotto la tua navbar */
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 5%;
   z-index: 999;
 }
 
 .mobile-menu a {
   color: var(--text);
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
   font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
 }
 
 .mobile-menu a:hover {
   color: var(--accent);
 }
+
+/* Gestione Griglia Skills desktop (2 colonne) */
 .skills-grid {
   display: grid;
-  /* Forza la griglia ad avere esattamente 2 colonne uguali su desktop */
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
 
-/* Gestione responsive: sui telefoni e tablet tornano su una riga sola per non stringersi troppo */
-@media (max-width: 992px) {
+/* Media Query principale per Smartphone e Tablet */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Nasconde i link standard */
+  }
+
+  .hamburger {
+    display: block; /* Mostra le 3 lineette */
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Le skills tornano a 1 colonna per leggibilità */
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .hero-role {
+    font-size: 1.5rem;
+  }
+
+  .profile-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
   }
 }
