@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
+
 :root {
   --dark-bg: #0a0a0a;
   --darker-bg: #050505;
@@ -11,12 +12,17 @@
   --accent-glow: rgba(46, 204, 113, 0.4);
   --text: #ffffff;
 }
+
 body {
   background-color: var(--dark-bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
-} /* Navigation */
+}
+
+/* ==========================================================================
+   NAVIGATION (Navbar)
+   ========================================================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -30,19 +36,21 @@ body {
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
   position: relative;
-  padding-left: 2.5rem;
 }
+
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
 }
+
 .nav-links a {
   color: var(--text);
   text-decoration: none;
@@ -50,6 +58,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
 }
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -60,70 +69,68 @@ body {
   background: var(--accent);
   transition: width 0.3s ease;
 }
+
 .nav-links a:hover::after {
   width: 100%;
-} /* Hero Section */
-.hero {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  padding: 10% 5%;
-  background: radial-gradient(
-    circle at 75% 30%,
-    var(--accent-glow) 0%,
-    transparent 30%
-  );
 }
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  display: flex;
+  align-items: center; /* Centra verticalmente testo e immagine */
+  justify-content: space-between;
+  padding: 140px 5vw 60px 5vw; /* Aumentato a 140px per spingere giù il testo sotto la navbar */
+  min-height: 85vh; /* Dà perfetto respiro verticale sullo schermo */
+  box-sizing: border-box;
+}
+
 .hero-content {
   flex: 1;
-  padding-right: 5rem;
+  padding-right: 3rem;
 }
-.hero-image {
-  flex: 1;
-  text-align: center;
-  position: relative;
-}
-.profile-img {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  box-shadow: 0 0 50px var(--accent-glow);
-  animation: float 3s ease-in-out infinite;
-  filter: grayscale(0.2) contrast(1.1);
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(30px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-}
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 0.1rem;
-  background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero h2 {
-  font-size: 3rem;
+
+/* Il tuo nome: ridimensionato e protetto da crash */
+.hero-name {
+  font-size: 3.8rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: 700;
   background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+/* Il tuo ruolo: rimpicciolito ma con lo stesso identico stile sfumato */
+.hero-role {
+  font-size: 1.8rem; /* Dimensione bilanciata e leggibile */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   opacity: 0.9;
   max-width: 600px;
   font-style: oblique;
 }
+
+/* Sottotitolo in evidenza */
+.hero p.highlight {
+  font-style: normal;
+  font-weight: 500;
+  color: #d4f7dc;
+  margin-bottom: 2rem;
+}
+
 .cta-button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -131,20 +138,70 @@ body {
   color: white;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* Immagine Profilo */
+.hero-image {
+  flex: 1;
+  text-align: center;
   position: relative;
-  overflow: hidden;
-} /* Skills Section */
+}
+
+.profile-img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 50px var(--accent-glow);
+  animation: float 4s ease-in-out infinite; /* Animazione resa più fluida (4s) */
+  filter: grayscale(0.2) contrast(1.1);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(
+      15px
+    ); /* Ridotto il sobbalzo per evitare flash grafici */
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+/* ==========================================================================
+   SKILLS SECTION
+   ========================================================================== */
 .skills {
   padding: 5rem 5%;
   background: var(--darker-bg);
 }
+
+.skills h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
+
 .skill-card {
   padding: 2rem;
   border-radius: 15px;
@@ -153,28 +210,29 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
 }
+
 .skill-card:hover {
   transform: translateY(-10px);
   border-color: var(--accent);
   box-shadow: 0 10px 30px var(--accent-glow);
 }
+
 .skill-card i {
   font-size: 2.5rem;
   color: var(--accent);
   margin-bottom: 1rem;
-} /* Footer */
+}
+
+/* ==========================================================================
+   FOOTER & CONTACTS
+   ========================================================================== */
 footer {
   background: var(--darker-bg);
   padding: 3rem 5%;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.social-links {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
+
 .footer-title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -188,34 +246,30 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .icon-group {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
+  align-items: center;
 }
 
 .social-links a {
   color: var(--text);
   font-size: 1.5rem;
   transition: all 0.3s ease;
+  display: inline-block;
 }
+
 .social-links a:hover {
   color: var(--accent);
   transform: translateY(-3px);
 }
-.vercel-icon svg {
-  transition: all 0.3s ease;
-  vertical-align: middle;
-}
 
-.vercel-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
+/* Integrazione Icona Vercel SVG */
 .vercel-icon {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -240,34 +294,55 @@ footer {
 }
 
 .vercel-icon:hover .vercel-triangle {
-  fill: var(--accent); /* verde */
+  fill: var(--accent);
 }
 
 .vercel-icon:hover .vercel-bg {
-  fill: rgba(255, 255, 255, 0.1); /* glow leggero */
+  fill: rgba(255, 255, 255, 0.1);
 }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 120px;
   }
+
   .hero-content {
     padding-right: 0;
     margin-bottom: 3rem;
   }
+
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .hero-role {
+    font-size: 1.5rem;
+  }
+
   .profile-img {
     width: 280px;
     height: 280px;
   }
+
   .nav-links {
     display: none;
   }
+
   .logo {
     font-size: 1.5rem;
-    padding-left: 2rem;
+  }
+
+  .hamburger {
+    display: block;
   }
 }
+
+/* Elementi Menu Mobile */
 .hamburger {
   display: none;
   background: none;
@@ -300,13 +375,17 @@ footer {
 .mobile-menu a:hover {
   color: var(--accent);
 }
+.skills-grid {
+  display: grid;
+  /* Forza la griglia ad avere esattamente 2 colonne uguali su desktop */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
+/* Gestione responsive: sui telefoni e tablet tornano su una riga sola per non stringersi troppo */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -49,7 +49,9 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
 }
 
 .project button:hover {
@@ -68,17 +70,22 @@
 }
 .section-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centra il contenuto principale */
   align-items: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+  margin-bottom: 50px; /* Aumentato lo spazio sotto l'header */
+  position: relative; /* Permette di posizionare il bottone Home senza spostare il titolo */
+  width: 100%;
 }
 
 .title-group {
-  max-width: 80%;
+  max-width: 700px; /* Stringiamo leggermente il contenitore per una migliore indentazione */
+  text-align: center; /* Centra sia il titolo che il sottotesto al suo interno */
+  margin: 0 auto;
 }
 
 .home-btn {
+  position: absolute;
+  right: 5vw; /* Allineato al padding del contenitore #projects */
   text-decoration: none;
   background-color: #05a158;
   color: #000000;
@@ -87,7 +94,36 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 .home-btn:hover {
   background-color: #444;
+}
+/* Rende il sottotitolo più compatto, centrato e gli dà spazio sotto */
+/* Gestione sottotitolo */
+.custom-subtitle {
+  max-width: 650px;
+  margin: 20px auto 0 auto;
+  line-height: 1.5; /* Leggermente ridotto per avvicinare le due righe */
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Contenitore del titolo della colonna (Icona + Testo) */
+.column-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Spazio tra l'icona e il testo */
+}
+
+/* Questa classe applica lo sfumato SOLO al testo, salvando l'icona */
+.gradient-text {
+  background: linear-gradient(45deg, var(--accent) 30%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
